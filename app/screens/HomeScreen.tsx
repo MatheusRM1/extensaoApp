@@ -7,7 +7,7 @@ import { BottomNav } from '../components/home/BottomNav';
 import { FilterModal } from '../components/home/FilterModal';
 import { useAcoes } from '../hooks/useAcoes';
 
-export default function HomeScreen() {
+export default function HomeScreen({ onSelectAcao }) {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   
   const { 
@@ -31,7 +31,11 @@ export default function HomeScreen() {
             {filteredAcoes.length} ações encontradas
           </p>
           {filteredAcoes.map(acao => (
-            <AcaoCard key={acao.id} acao={acao} />
+            <AcaoCard 
+              key={acao.id} 
+              acao={acao} 
+              onClick={() => onSelectAcao(acao)}
+            />
           ))}
         </div>
 

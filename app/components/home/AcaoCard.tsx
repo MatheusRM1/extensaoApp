@@ -1,8 +1,11 @@
 import React from 'react';
 
-export const AcaoCard = ({ acao }) => {
+export const AcaoCard = ({ acao, onClick }) => {
   return (
-    <div className="bg-white p-5 rounded-3xl shadow-sm mb-4 border border-gray-50">
+    <div 
+      onClick={onClick}
+      className="bg-white p-5 rounded-3xl shadow-sm mb-4 border border-gray-50 cursor-pointer hover:shadow-md transition-shadow active:scale-[0.98]"
+    >
       <div className="flex justify-between items-start mb-3">
         <div className="flex items-center gap-2">
           <span className="text-lg">{acao.areaIcon}</span>
@@ -15,7 +18,7 @@ export const AcaoCard = ({ acao }) => {
         </button>
       </div>
       
-      <h3 className="text-[15px] font-bold text-gray-900 mb-4 leading-snug">
+      <h3 className="text-[15px] font-bold text-[#0a1128] mb-4 leading-snug">
         {acao.title}
       </h3>
       

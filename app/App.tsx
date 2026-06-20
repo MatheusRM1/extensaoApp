@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
-import { useLogin } from './hooks/useLogin';
+import DetailsScreen from './screens/DetailsScreen';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('login');
+  const [selectedAcao, setSelectedAcao] = useState(null);
 
-  const { matricula, setMatricula, senha, setSenha } = useLogin();
+  const handleOpenDetails = (acao) => {
+    setSelectedAcao(acao);
+    setCurrentScreen('details');
+  };
 
-  const handleLogin = () => {
+  const handleBackToHome = () => {
+    setSelectedAcao(null);
     setCurrentScreen('home');
   };
 
   return (
     <>
       {currentScreen === 'login' && (
-        <LoginScreen 
-          matricula={matricula}
-          setMatricula={setMatricula}
-          senha={senha}
-          setSenha={setSenha}
-          onLogin={handleLogin} 
-        />
+        <LoginScreen onLogin={() => setCurrentScreen('home')} />
       )}
-      {currentScreen === 'home' && <HomeScreen />}
+      {currentScreen === 'home' && (
+        <HomeScreen onSelectAcao={handleOpenDetails} />
+      )}
+      {currentScreen === 'details' && (
+        <DetailsScreen acao={selectedAcao} onBack={handleBackToHome} />
+      )}
     </>
   );
 }
