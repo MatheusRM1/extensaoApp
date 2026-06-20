@@ -48,6 +48,7 @@ export default function App() {
         <ContactScreen 
           acao={selectedAcao} 
           onBack={handleBackToDetails} 
+          onHome={handleBackToHome}
         />
       )}
     </>
