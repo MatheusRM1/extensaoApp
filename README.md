@@ -1,87 +1,51 @@
-# Welcome to React Router!
+# 🎓 Extensão UFJF - Protótipo Mobile
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Protótipo front-end de um aplicativo mobile para consulta e inscrição em projetos de extensão da Universidade Federal de Juiz de Fora (UFJF). 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Este projeto foi construído utilizando **React**, **Vite** e **Tailwind CSS**. Ele simula a interface de um smartphone diretamente no navegador, possuindo navegação entre telas e dados mockados para fins de demonstração.
 
-## Features
+## 🚀 Como rodar o projeto
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+### Pré-requisitos
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
 
-## Getting Started
+### Passo a passo
 
-### Installation
+1. **Clone o Repositório**.
+2. **Abra o terminal** na pasta raiz do projeto.
+3. **Instale as dependências** rodando o comando:
+   ```bash  
+   npm install
+   ```
+4. **Rode o Projeto** rodando o comando:
+   ```bash  
+   npm run dev
+   ```
 
-Install the dependencies:
+# 📱 Telas e Funcionalidades
+O fluxo atual do protótipo é focado na experiência do aluno buscando projetos, contemplando:
 
-```bash
-npm install
-```
+Login: 
+- Tela de acesso simulando a entrada com matrícula e senha do SIGA.
 
-### Development
+Home (Lista de Ações):
+ - Listagem em formato de cards dos projetos disponíveis.
+ - Barra de busca funcional.
+ - Modal de filtros avançados (Modalidade, Área de Conhecimento e Carga Horária) totalmente integrados aos dados mockados.
 
-Start the development server with HMR:
+Detalhes do Projeto: 
+ - Informações detalhadas sobre a ação de extensão selecionada, incluindo descrição, atividades previstas, período e dados do coordenador responsável.
 
-```bash
-npm run dev
-```
+Contato com Coordenador:
+ - Formulário para envio de dúvidas ou demonstração de interesse. 
 
-Your application will be available at `http://localhost:5173`.
+Validação de preenchimento (botão de envio ativado apenas com texto).
 
-## Building for Production
+Tela de sucesso de envio de mensagem com opções de retornar ao início ou enviar nova mensagem.
 
-Create a production build:
+# 🛠️ Tecnologias Utilizadas
+- React: Biblioteca principal de renderização de interfaces.
+- Vite: Ferramenta de build e servidor de desenvolvimento super rápido.
+- Tailwind CSS: Framework utilitário de CSS para estilização direta no JSX, garantindo um design fiel ao Figma sem necessidade de múltiplos arquivos CSS.
 
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+*Desenvolvido como protótipo acadêmico.*
