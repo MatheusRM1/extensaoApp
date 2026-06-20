@@ -1,7 +1,7 @@
 import React from 'react';
 import { DeviceMockup } from '../components/layout/DeviceMockup';
 
-export default function DetailsScreen({ acao, onBack }) {
+export default function DetailsScreen({ acao, onBack, onContact }) {
   if (!acao) return null;
 
   return (
@@ -106,7 +106,9 @@ export default function DetailsScreen({ acao, onBack }) {
             </div>
           </div>
 
-          <button className="w-full bg-[#C32128] hover:bg-[#a81920] text-white font-bold rounded-2xl py-4 shadow-lg shadow-red-500/30 transition-all mb-4">
+          <button 
+          onClick={onContact}
+          className="w-full bg-[#C32128] hover:bg-[#a81920] text-white font-bold rounded-2xl py-4 shadow-lg shadow-red-500/30 transition-all mb-4">
             Entrar em contato
           </button>
           <button className="w-full bg-red-50 hover:bg-red-100 text-[#C32128] font-bold rounded-2xl py-4 flex items-center justify-center gap-2 transition-all border border-red-100 mb-6">
