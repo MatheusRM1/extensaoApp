@@ -1,10 +1,15 @@
-import React from 'react';
-import { useLogin } from '../../hooks/useLogin';
+import React, { useState } from 'react';
 import { Input } from '../Input';
 import { Button } from '../Button';
 
-export const LoginForm = () => {
-  const { matricula, setMatricula, senha, setSenha, handleLogin } = useLogin();
+export const LoginForm = ({ onLogin }) => {
+  const [matricula, setMatricula] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleEntrar = () => {
+    console.log("Tentando logar com:", matricula);
+    if (onLogin) onLogin();
+  };
 
   return (
     <div className="flex-1 bg-white mt-2 rounded-t-[32px] px-6 pt-8 pb-6 flex flex-col">
@@ -25,9 +30,11 @@ export const LoginForm = () => {
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
         />
-        <Button onClick={handleLogin} variant="primary">
+        
+        <Button onClick={handleEntrar} variant="primary">
           Entrar
         </Button>
+        
         <div className="text-center mt-2">
           <Button variant="text">
             Recuperar acesso

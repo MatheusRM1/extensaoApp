@@ -1,13 +1,13 @@
 import React from 'react';
-import { DeviceMockup } from '~/components/layout/DeviceMockup';
-import { LoginForm } from '~/components/login/LoginForm';
-import { LoginHeader } from '~/components/login/LoginHeader';
+import { DeviceMockup } from '../components/layout/DeviceMockup';
+import { LoginHeader } from '../components/login/LoginHeader';
+import { LoginForm } from '../components/login/LoginForm';
 
-export default function LoginScreen() {
+export default function LoginScreen({ onLogin }) {
   return (
     <DeviceMockup>
       <LoginHeader />
-      <LoginForm />
+      <LoginForm onLogin={onLogin} />
     </DeviceMockup>
   );
 }
